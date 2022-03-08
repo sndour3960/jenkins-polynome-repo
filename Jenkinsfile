@@ -6,26 +6,35 @@ pipeline {
     }
     stages {
 
-        stage('Get maven version') { 
+        stage('La version de maven') { 
             steps {
                 sh "mvn --version"
             }
         }
 
-        stage('Build') { 
+        stage('Compiler les sources') { 
             steps {
-                // 
+                 sh "mvn compile"
             }
         }
-        stage('Test') { 
+        stage('Executer les tests') { 
             steps {
-                // 
+                 sh "mvn test"
             }
         }
-        stage('Deploy') { 
+
+        stage('Produire un livrable') { 
             steps {
-                // 
+                 sh "mvn package -DskipTest"
             }
         }
     }
+    post {
+            always {
+                junit 'target/surefire-reports/*.xml'
+                archiveArtifacts artifacts 'target/*.jar'
+            }
+    
+        }
+
 }
