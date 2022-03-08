@@ -21,4 +21,14 @@ class PolynomeApplicationTests {
 		assertEquals(28, r);
 	}
 
+	@Test
+	public void additionTest() {
+		int[] t2 = {0,2,1,4};
+		int[] t1 = {1,2,3};
+		Polynome pl = new Polynome(t1);
+		Polynome pl1 = new Polynome(t2);
+		Polynome pl2 = pl.addition(pl1);
+		String res = pl2.toString();
+		assertEquals("1+4X^1+4X^2+4X^4", res);//3
+	}
 }

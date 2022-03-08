@@ -21,7 +21,9 @@ public class PolynomeApplication {
     		int[] t2 = {0,2,1,4};
     		int[] s = {1,4,4,4};
     		Polynome pl = new Polynome(t1);
-    		System.out.println(pl);
+    		Polynome pl1 = new Polynome(t2);
+    		Polynome pl2 = pl.addition(pl1);
+    		System.out.println(pl2);
         };
     }
 
