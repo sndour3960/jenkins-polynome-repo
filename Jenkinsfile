@@ -8,24 +8,24 @@ pipeline {
 
         stage('La version de maven') { 
             steps {
-                sh "mvn --version"
+                bat "mvn --version"
             }
         }
 
         stage('Compiler les sources') { 
             steps {
-                 sh "mvn compile"
+                 bat "mvn compile"
             }
         }
         stage('Executer les tests') { 
             steps {
-                 sh "mvn test"
+                 bat "mvn test"
             }
         }
 
         stage('Produire un livrable') { 
             steps {
-                 sh "mvn package -DskipTest"
+                 bat "mvn package -DskipTest"
             }
         }
     }
