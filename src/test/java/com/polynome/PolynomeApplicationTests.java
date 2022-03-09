@@ -18,7 +18,7 @@ class PolynomeApplicationTests {
 		int[] t = { 0, 2, 2, 2 };
 		Polynome p = new Polynome(t);
 		int r = p.calcul(2);
-		assertEquals(28, r);
+		assertEquals(29, r);
 	}
 
 	@Test
