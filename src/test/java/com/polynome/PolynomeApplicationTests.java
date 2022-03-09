@@ -29,6 +29,6 @@ class PolynomeApplicationTests {
 		Polynome pl1 = new Polynome(t2);
 		Polynome pl2 = pl.addition(pl1);
 		String res = pl2.toString();
-		assertEquals("1+4X^1+4X^2+4X^4", res);//3
+		assertEquals("1+4X^1+4X^2+4X^3", res);//3
 	}
 }
